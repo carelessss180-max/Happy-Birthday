@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: auto;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #fff5f6 0%, #ffe4e8 100%);
+            text-align: center;
+            overflow: auto;
+        }
+
+        /* Background Floating Elements */
+        .bg-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0; left: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .floating {
+            position: absolute;
+            opacity: 0.15;
+            animation: float 6s infinite ease-in-out;
+            filter: grayscale(20%);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart-icon {
+            color: #d63384;
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .divider {
+            width: 70px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #d63384, transparent);
+            margin: 0 15px;
+            border-radius: 1px;
+            box-shadow: 0 1px 3px rgba(214, 51, 132, 0.15);
+        }
+
+        .special-text {
+            font-size: 11px;
+            letter-spacing: 5px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(45px, 9vw, 85px);
+            color: #cc2b5e;
+            margin: 10px 0;
+            font-weight: 400;
+        }
+
+        .sub-text {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 35px;
+            font-style: italic;
+        }
+
+        .btn-red {
+            background: #d61a3c;
+            color: white;
+            padding: 14px 50px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(214, 26, 60, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-red:hover {
+            transform: scale(1.03);
+            background: #b31632;
+        }
+
+        .footer-name {
+            margin-top: 50px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: #8a8a8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-line {
+            width: 80px;
+            height: 1px;
+            background: #e5e5e5;
+            margin: 0 20px;
+        }
+
+        .arrow-down {
+            margin-top: 25px;
+            font-size: 18px;
+            color: #aaa;
+            animation: bounce 2s infinite;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .arrow-down:hover {
+            color: #cc2b5e;
+            transform: scale(1.2);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-8px);}
+            60% {transform: translateY(-4px);}
+        }
+
+        .letter-section {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+        }
+
+        .letter-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 2px solid #ffe4e8;
+        }
+
+        .letter-box h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+            color: #cc2b5e;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .letter-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            text-align: left;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .letter-signature {
+            text-align: right;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #cc2b5e;
+            margin-top: 30px;
+        }
+
+        .photos-section {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .photos-container {
+            max-width: 700px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .photos-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+            color: #cc2b5e;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .photo-card {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #cc2b5e 0%, #e8749f 100%);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(204, 43, 94, 0.5), 0 0 40px rgba(204, 43, 94, 0.4);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                opacity: 1;
+                box-shadow: 0 10px 30px rgba(204, 43, 94, 0.3), 0 0 20px rgba(204, 43, 94, 0.2);
+            }
+            50% {
+                opacity: 1;
+                box-shadow: 0 15px 40px rgba(204, 43, 94, 0.5), 0 0 40px rgba(204, 43, 94, 0.4);
+            }
+        }
+
+
+
+        /* Admin Panel Styles */
+        .admin-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .admin-btn:hover {
+            transform: scale(1.1);
+            background: #555;
+        }
+
+        .admin-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+
+        .admin-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .admin-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #cc2b5e;
+        }
+
+        .admin-header h2 {
+            margin: 0;
+            color: #cc2b5e;
+            font-family: 'Great Vibes', cursive;
+            font-size: 32px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #cc2b5e;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .admin-tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            color: #999;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .admin-tab.active {
+            color: #cc2b5e;
+            border-bottom-color: #cc2b5e;
+        }
+
+        .admin-tab-content {
+            display: none;
+        }
+
+        .admin-tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #cc2b5e;
+            box-shadow: 0 0 5px rgba(204, 43, 94, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .admin-btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-primary, .btn-secondary, .btn-danger {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #cc2b5e;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b31632;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #555;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        .memory-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .memory-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            border-left: 4px solid #cc2b5e;
+        }
+
+        .memory-item-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .memory-item-emoji {
+            font-size: 24px;
+            margin-right: 10px;
+            width: 35px;
+        }
+
+        .memory-item-text {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .memory-item-buttons {
+            display: flex;
+            gap: 8px;
+            margin-left: 10px;
+        }
+
+        /* Ensure checkboxes in the memory list are visible and styled */
+        .memory-item input[type="checkbox"], #selectAllMemories {
+            width: 18px;
+            height: 18px;
+            margin: 0 8px 0 0;
+            accent-color: #cc2b5e;
+            cursor: pointer;
+        }
+
+        .memory-item-buttons button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+
+        .edit-btn {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .edit-btn:hover {
+            background: #45a049;
+        }
+
+        .delete-btn {
+            background: #f44336;
+            color: white;
+        }
+
+        .delete-btn:hover {
+            background: #da190b;
+        }
+
+        .emoji-picker {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            margin: 15px 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .emoji-option {
+            background: #f0f0f0;
+            border: 2px solid transparent;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 24px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .emoji-option:hover,
+        .emoji-option.selected {
+            background: #cc2b5e;
+            border-color: #8a1a3d;
+        }
+
+        /* Image Upload Styles */
+        .image-upload-container {
+            margin: 20px 0;
+        }
+
+        .image-upload-input {
+            display: none;
+        }
+
+        .image-upload-label {
+            display: block;
+            padding: 30px;
+            border: 3px dashed #cc2b5e;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            background: #fff5f6;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .image-upload-label:hover {
+            background: #ffe4e8;
+            border-color: #8a1a3d;
+        }
+
+        .image-upload-label.dragover {
+            background: #ffe4e8;
+            border-color: #cc2b5e;
+            transform: scale(1.02);
+        }
+
+        .image-preview {
+            margin-top: 15px;
+            max-width: 100%;
+            border-radius: 10px;
+            max-height: 250px;
+            display: block;
+        }
+
+        .preview-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .remove-image-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .memory-item-emoji {
+            font-size: 24px;
+            margin-right: 10px;
+            width: 35px;
+        }
+
+        .memory-item-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        /* Photo Modal Styles */
+        .photo-modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeInOverlay 0.3s ease;
+        }
+
+        .photo-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeInOverlay {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .photo-modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+            animation: popUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes popUp {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .photo-modal-image {
+            max-width: 100%;
+            max-height: 75vh;
+            background: #f5f5f5;
+            border-radius: 15px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .photo-modal-description {
+            text-align: center;
+            margin-top: 15px;
+            color: #555;
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .photo-modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #cc2b5e;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-modal-close:hover {
+            background: #8a1a3d;
+            transform: rotate(90deg);
+        }
+
+        .success-msg {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #28a745;
+            display: none;
+        }
+
+        .success-msg.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Greeting Modal Styles */
+        .greeting-modal {
+            display: none;
+            position: fixed;
+            z-index: 3500;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeInOverlay 0.3s ease;
+        }
+
+        .greeting-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .greeting-content {
+            position: relative;
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.4);
+            animation: popUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            text-align: center;
+        }
+
+        .greeting-emoji {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        .greeting-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            color: #cc2b5e;
+            margin: 15px 0;
+        }
+
+        .greeting-text {
+            font-size: 16px;
+            color: #555;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .greeting-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .greeting-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .greeting-btn-yes {
+            background: linear-gradient(135deg, #cc2b5e 0%, #e8749f 100%);
+            color: white;
+        }
+
+        .greeting-btn-yes:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(204, 43, 94, 0.3);
+        }
+
+        /* Music Player Styles */
+        .music-player {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(204, 43, 94, 0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            box-shadow: 0 8px 20px rgba(204, 43, 94, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .music-player:hover {
+            background: rgba(204, 43, 94, 1);
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(204, 43, 94, 0.4);
+        }
+
+        .music-icon {
+            font-size: 16px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Message Section Styles */
+        .message-section {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            position: relative;
+            background: linear-gradient(135deg, #fff5f6 0%, #ffe4e8 100%);
+        }
+
+        .message-container {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 15px;
+            padding: 60px 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 2px solid #ffe4e8;
+            text-align: center;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .message-container h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: #cc2b5e;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .message-container p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #333;
+            margin: 10px 0;
+            font-family: 'Georgia', serif;
+            font-weight: 400;
+            min-height: 1.2em;
+            overflow: hidden;
+            white-space: normal;
+            opacity: 0;
+            transform: translateY(10px);
+            text-align: left;
+        }
+
+        /* Show paragraphs one after another with fade+slide */
+        .message-container p:nth-child(2) {
+            animation: fadeInUp 0.9s ease 0.4s forwards;
+        }
+
+        .message-container p:nth-child(3) {
+            animation: fadeInUp 0.9s ease 1.6s forwards;
+        }
+
+        .message-container p:nth-child(4) {
+            animation: fadeInUp 0.9s ease 3s forwards;
+        }
+
+        .message-container p:nth-child(5) {
+            animation: fadeInUp 0.9s ease 4.4s forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Envelope styles: keeps letter hidden until opened */
+        .envelope {
+            width: 560px;
+            max-width: 92%;
+            height: 160px;
+            margin: 0 auto 18px;
+            position: relative;
+            background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,250,250,0.95) 100%);
+            border-radius: 12px;
+            box-shadow: 0 18px 50px rgba(204,43,94,0.08);
+            overflow: visible;
+            border: 1px solid rgba(255,230,235,0.9);
+        }
+
+        .envelope .flap {
+            position: absolute;
+            top: -6px;
+            left: 0;
+            right: 0;
+            height: 86px;
+            background: linear-gradient(135deg, rgba(204,43,94,0.12) 0%, rgba(255,240,245,0.12) 100%);
+            transform-origin: center top;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            transition: transform 0.7s cubic-bezier(.2,.9,.2,1);
+            z-index: 4;
+        }
+
+        .envelope .body {
+            position: absolute;
+            top: 36px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        .open-btn {
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            background: linear-gradient(180deg,#ff5b7a,#d6336a);
+            border: none;
+            color: white;
+            font-size: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(214,26,60,0.18);
+            cursor: pointer;
+            transition: transform 0.25s ease;
+        }
+
+        .open-btn:hover { transform: translateY(-4px); }
+
+        .open-text {
+            margin-top: 8px;
+            font-family: 'Great Vibes', cursive;
+            color: #cc2b5e;
+            font-size: 22px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+
+        .envelope.opened .flap {
+            transform: rotateX(180deg) translateY(-30px);
+        }
+
+        .envelope.hidden { opacity: 0; transform: translateY(-10px); transition: opacity .4s ease, transform .4s ease; }
+
+        /* Hide letter until envelope is opened */
+        .message-container.hidden { opacity: 0; max-height: 0; overflow: hidden; transition: opacity .45s ease, max-height .6s ease; }
+        .message-container.revealed { opacity: 1; max-height: 2000px; }
+        /* Envelope / Open letter button styles */
+        .envelope {
+            width: 560px;
+            max-width: 92%;
+            height: 160px;
+            margin: 0 auto 18px;
+            position: relative;
+            background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,250,250,0.95) 100%);
+            border-radius: 12px;
+            box-shadow: 0 18px 50px rgba(204,43,94,0.08);
+            overflow: visible;
+            border: 1px solid rgba(255,230,235,0.9);
+        }
+
+        .envelope .flap {
+            position: absolute;
+            top: -6px;
+            left: 0;
+            right: 0;
+            height: 86px;
+            background: linear-gradient(135deg, rgba(204,43,94,0.12) 0%, rgba(255,240,245,0.12) 100%);
+            transform-origin: center top;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            transition: transform 0.7s cubic-bezier(.2,.9,.2,1);
+            z-index: 4;
+        }
+
+        .envelope .body {
+            position: absolute;
+            top: 36px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        .open-btn {
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            background: linear-gradient(180deg,#ff5b7a,#d6336a);
+            border: none;
+            color: white;
+            font-size: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(214,26,60,0.18);
+            cursor: pointer;
+            transition: transform 0.25s ease;
+        }
+
+        .open-btn:hover { transform: translateY(-4px); }
+
+        .open-text {
+            margin-top: 8px;
+            font-family: 'Great Vibes', cursive;
+            color: #cc2b5e;
+            font-size: 22px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+
+        .envelope.opened .flap {
+            transform: rotateX(180deg) translateY(-30px);
+        }
+
+        .envelope.hidden { opacity: 0; transform: translateY(-10px); transition: opacity .4s ease, transform .4s ease; }
+        /* Typing caret */
+        .typing-caret {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: #cc2b5e;
+            vertical-align: bottom;
+            margin-left: 6px;
+            animation: blink 0.7s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Controls -->
+    <button class="music-player" id="audioToggle" onclick="toggleAudio()" title="Toggle Music">
+        <span class="music-icon">🎵</span>
+        <span>Unmute Music</span>
+    </button>
+
+    <div class="bg-elements">
+        <span class="floating" style="top: 10%; left: 5%; font-size: 50px;">💗</span>
+        <span class="floating" style="top: 5%; right: 5%; font-size: 50px; animation-delay: 1s;">💗</span>
+        <span class="floating" style="bottom: 10%; left: 3%; font-size: 45px; animation-delay: 2s;">💗</span>
+        <span class="floating" style="bottom: 5%; right: 3%; font-size: 45px; animation-delay: 1.5s;">💗</span>
+        <span class="floating" style="top: 30%; right: 25%; font-size: 20px;">❤</span>
+        <span class="floating" style="bottom: 40%; left: 20%; font-size: 18px; animation-delay: 3s;">❤</span>
+    </div>
+
+    <div class="container">
+        <div class="heart-icon">
+            <div class="divider"></div>
+            ❤
+            <div class="divider"></div>
+        </div>
+        
+        <div class="special-text">A Special Surprise For</div>
+        <h1> Happy Birthday, Bhumiiii...</h1>
+        <p class="sub-text">Let's Celebrate !</p>
+        
+        <button class="btn-red" onclick="startCelebration()">Click For Latter</button>
+
+        <div class="footer-name">
+            <div class="footer-line"></div>
+           Cutie
+            <div class="footer-line"></div>
+        </div>
+
+        <div class="arrow-down" onclick="openGreetingModal()">∨</div>
+    </div>
+
+    <!-- Message Section -->
+    <div class="message-section" id="message-section">
+        <div class="bg-elements" style="position: absolute; width: 100%; height: 100%;">
+            <span class="floating" style="top: 10%; left: 5%; font-size: 50px;">💗</span>
+            <span class="floating" style="top: 5%; right: 5%; font-size: 50px; animation-delay: 1s;">💗</span>
+            <span class="floating" style="bottom: 10%; left: 3%; font-size: 45px; animation-delay: 2s;">💗</span>
+            <span class="floating" style="bottom: 5%; right: 3%; font-size: 45px; animation-delay: 1.5s;">💗</span>
+            <span class="floating" style="top: 30%; right: 25%; font-size: 20px;">❤</span>
+            <span class="floating" style="bottom: 40%; left: 20%; font-size: 18px; animation-delay: 3s;">❤</span>
+        </div>
+        <div class="message-container" style="display: none;" id="messageContainer">
+            <h2>💕 A Special Latter 💕</h2>
+            <p>         Happy Birthday Bhumiiiii 💝 ...!
+
+                Bhumi, do you remember where we met for the very first time? 🥹 If you don't, let me remind you... It was in **IT Lab 5**. ✨Those days were truly special. Even today, every single memory from that time is still fresh in my heart. ❤️
+I still remember how we used to stay in college until late at night, decorating everything together. 😂🎨 Those moments were so much fun! Then there were the dance performances, all the laughter, and the endless memories we created. 💃🕺
+
+And how could I ever forget our trip to **Karnala Bird Sanctuary**? 🌿🦜 We clicked so many beautiful photos and videos that every time I look at them, it feels like I'm reliving those moments all over again. 📸✨ Some memories are simply too precious to ever fade.
+No matter where life takes us, I hope you always keep that beautiful smile on your face. 😊 Because when you're happy, all of us feel happy too. ❤️
+
+Stay blessed, keep shining, keep smiling, and may Bappa always protect you and fill your life with endless happiness, success, and love. 🙏✨
+
+
+So, with a gentle smile and a heart full of memories… 🤍 
+Happy Birthday, once again. !!!
+Take care of yourself.
+
+Goodbye… for now. 🌙</p>
+            <p>Be Happy Stay Happy 🫶🏻</p>
+            <button class="btn-red" style="margin-top: 30px;" onclick="scrollToMemories()">View Memories 💝</button>
+        </div>
+    </div>
+
+    <div class="photos-section" id="photos-section">
+        <div class="bg-elements" style="position: absolute; width: 100%; height: 100%;">
+            <span class="floating" style="top: 10%; left: 5%; font-size: 50px;">💗</span>
+            <span class="floating" style="top: 5%; right: 5%; font-size: 50px; animation-delay: 1s;">💗</span>
+            <span class="floating" style="bottom: 10%; left: 3%; font-size: 45px; animation-delay: 2s;">💗</span>
+            <span class="floating" style="bottom: 5%; right: 3%; font-size: 45px; animation-delay: 1.5s;">💗</span>
+            <span class="floating" style="top: 30%; right: 25%; font-size: 20px;">❤</span>
+            <span class="floating" style="bottom: 40%; left: 20%; font-size: 18px; animation-delay: 3s;">❤</span>
+            <span class="floating" style="top: 50%; left: 10%; font-size: 40px; animation-delay: 0.5s;">💗</span>
+            <span class="floating" style="top: 60%; right: 15%; font-size: 35px; animation-delay: 2.5s;">❤</span>
+        </div>
+        <div class="photos-container">
+            <div class="photos-title">✨ Our Memories ✨</div>
+            <div class="gallery" id="gallery">
+            </div>
+            <div style="text-align:center;margin-top:18px;">
+                <button class="btn-red" onclick="window.open('https://careless0910-collab.github.io/flowers/','_blank')" title="A happy ending">Happy Ending ❤️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Button -->
+    <button class="admin-btn" onclick="openAdminPanel()">⚙️</button>
+
+    <!-- Admin Modal -->
+    <div class="admin-modal" id="adminModal">
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2>Admin Panel</h2>
+                <button class="close-btn" onclick="closeAdminPanel()">✕</button>
+            </div>
+
+            <div class="success-msg" id="successMsg"></div>
+
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="switchTab('add')">➕ Add Memory</button>
+                <button class="admin-tab" onclick="switchTab('edit')">✏️ Edit Memories</button>
+                <button class="admin-tab" onclick="switchTab('sync')">☁️ Sync to Server</button>
+            </div>
+
+            <!-- Add Memory Tab -->
+            <div class="admin-tab-content active" id="tab-add">
+                <div class="image-upload-container">
+                    <label class="image-upload-label" for="photoInput" id="uploadLabel">
+                        📸 📹 Click to upload photo/video or drag & drop
+                    </label>
+                    <input type="file" id="photoInput" class="image-upload-input" accept="image/*,video/*">
+                    <div id="previewContainer"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Memory Description (Optional):</label>
+                    <textarea id="memoryDesc" placeholder="Add a description for this memory..."></textarea>
+                </div>
+
+                <div class="admin-btn-group">
+                    <button class="btn-primary" onclick="addNewMemory()">Add Memory</button>
+                    <button class="btn-secondary" onclick="resetForm()">Clear</button>
+                </div>
+            </div>
+
+            <!-- Edit Memories Tab -->
+            <div class="admin-tab-content" id="tab-edit">
+                <div class="memory-list" id="memoryList">
+                </div>
+            </div>
+
+            <!-- Sync to Server Tab -->
+            <div class="admin-tab-content" id="tab-sync">
+                <div style="margin-bottom: 15px;">
+                    <p style="font-size:13px;color:#666;margin-bottom:10px;">Export your memories as a JSON file. Upload the file to the same server folder as this page (name it <code>memories.json</code>) so all visitors can see them.</p>
+                    <button class="btn-primary" onclick="exportMemoriesToJSON()" style="width:100%;margin-bottom:15px;">📥 Export as JSON File</button>
+                </div>
+                <hr style="border:none;border-top:1px solid #ddd;margin:20px 0;">
+                <div>
+                    <label>Or enter shared server URL:</label>
+                    <input type="text" id="serverURL" placeholder="https://your-server.com" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;margin-bottom:10px;">
+                    <p style="font-size:13px;color:#666;margin-bottom:10px;">Visitors will download shared memories from <code>serverURL/memories.json</code></p>
+                    <button class="btn-secondary" onclick="loadMemoriesFromServer()" style="width:100%;">☁️ Load from Custom Server</button>
+                </div>
+                <hr style="border:none;border-top:1px solid #ddd;margin:20px 0;">
+                <div>
+                    <p style="font-size:13px;color:#666;margin-bottom:10px;">Publish memories.json directly to a GitHub repository so all visitors see admin uploads. (Requires a GitHub personal access token with `repo` scope.)</p>
+                    <input type="text" id="ghOwner" placeholder="GitHub owner (username or org)" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;margin-bottom:8px;">
+                    <input type="text" id="ghRepo" placeholder="Repository name (e.g. Happy-Birthday)" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;margin-bottom:8px;">
+                    <input type="password" id="ghToken" placeholder="Personal Access Token (kept in your browser)" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;margin-bottom:8px;">
+                    <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><input type="checkbox" id="ghAutoPublish"> <span style="font-size:13px;color:#555">Auto-publish new memories to GitHub</span></label>
+                    <div style="display:flex;gap:8px">
+                        <button class="btn-primary" onclick="saveGitHubSettings()" style="flex:1">Save Settings</button>
+                        <button class="btn-secondary" onclick="publishMemoriesToGitHub()" style="flex:1">Publish Now</button>
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:10px">
+                        <button class="btn-secondary" onclick="removeDuplicateMemories()" style="flex:1">🧹 Remove Duplicates</button>
+                        <button class="btn-danger" onclick="clearAllMemories()" style="flex:1">🗑️ Clear All</button>
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:10px">
+                        <button class="btn-secondary" onclick="testDedupeFlow()" style="flex:1">🔬 Run Dedupe Test</button>
+                        <button class="btn-secondary" onclick="testClearFlow()" style="flex:1">🔬 Run Clear Test</button>
+                    </div>
+                    <div style="margin-top:12px;">
+                        <label style="font-size:12px;color:#777;display:block;margin-bottom:6px;">API debug output (paste/share this if publish fails):</label>
+                        <pre id="ghDebug" style="max-height:140px;overflow:auto;background:#fafafa;border:1px solid #eee;padding:8px;border-radius:6px;font-size:12px;color:#333;white-space:pre-wrap;"></pre>
+                    </div>
+                    <p style="font-size:12px;color:#999;margin-top:8px;">Warning: publishing large base64 images increases repo size. Use sparingly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Greeting Modal -->
+    <div class="greeting-modal" id="greetingModal">
+        <div class="greeting-content">
+            <div class="greeting-emoji">💕</div>
+            <h2 class="greeting-title">Ready?</h2>
+            <p class="greeting-text">
+                Let me show you some beautiful memories we've shared! 
+            </p>
+            <div class="greeting-buttons">
+                <button class="greeting-btn greeting-btn-yes" onclick="proceedToMemories()">Yes, Let's Go! 💫</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo Popup Modal -->
+    <div class="photo-modal" id="photoModal">
+        <div class="photo-modal-content">
+            <button class="photo-modal-close" onclick="closePhotoModal()">✕</button>
+            <img id="photoModalImage" class="photo-modal-image" src="" alt="Photo">
+            <div class="photo-modal-description" id="photoModalDesc"></div>
+        </div>
+    </div>
+
+    <script>
+        /*
+        === EMBEDDED MEMORIES SETUP ===
+        
+        To add memories that ALL viewers will see automatically (without needing memories.json):
+        
+        1. Convert your image/video to base64:
+           - Online: https://www.base64encode.org/ (upload image/video)
+           - Browser DevTools: 
+             const canvas = document.querySelector('img');
+             const data = canvas.toDataURL('image/jpeg', 0.9);
+             console.log(data); // Copy the data:image/... output
+        
+        2. Add to the defaultMemories array below with format:
+           {
+             type: 'photo',                    // or 'video'
+             description: 'Your caption',
+             createdAt: Date.now(),            // or specific timestamp
+             blobData: 'data:image/jpeg;base64,/9j/4AAQSkZJRg...'  // The base64 data
+           }
+        
+        3. Save and upload. Viewers will automatically see these memories!
+        
+        Note: Keep base64 data as compact as possible to avoid huge file sizes.
+        Max 8 memories total (including memories.json).
+        */
+
+        // Embedded memories with base64 data - add your photos/videos here
+        // These will show immediately without needing memories.json
+        const defaultMemories = [];
+        
+        // Auto-load from memories.json on page load
+        // For better reliability, manually add memories to defaultMemories array above
+
+        // Use IndexedDB for media storage so many/large videos can be saved.
+        let photos = []; // will hold records from DB
+
+        let selectedFile = null;
+        let selectedPreviewURL = null;
+        let selectedMediaType = null;
+        let replaceId = null;
+        let autoLoadDone = localStorage.getItem('autoLoadDone') === 'true'; // Persist across page reloads
+
+        function openDB() {
+            return new Promise((resolve, reject) => {
+                const req = indexedDB.open('memoriesDB', 1);
+                req.onupgradeneeded = function(e) {
+                    const db = e.target.result;
+                    if (!db.objectStoreNames.contains('media')) {
+                        const store = db.createObjectStore('media', { keyPath: 'id', autoIncrement: true });
+                        store.createIndex('createdAt', 'createdAt');
+                    }
+                };
+                req.onsuccess = function(e) { resolve(e.target.result); };
+                req.onerror = function(e) { reject(e.target.error); };
+            });
+        }
+
+        function addMedia(fileBlob, type, description, createdAt) {
+            return openDB().then(db => new Promise((resolve, reject) => {
+                const tx = db.transaction('media', 'readwrite');
+                const store = tx.objectStore('media');
+                const rec = { blob: fileBlob, type: type || 'photo', description: description || '', createdAt: createdAt || Date.now() };
+                const r = store.add(rec);
+                r.onsuccess = function(ev) { resolve(ev.target.result); };
+                r.onerror = function(ev) { reject(ev.target.error); };
+                tx.oncomplete = function() { db.close(); };
+                tx.onerror = function(e) { db.close(); reject(e.target.error); };
+            }));
+        }
+
+        function getAllMedia() {
+            return openDB().then(db => new Promise((resolve, reject) => {
+                const tx = db.transaction('media', 'readonly');
+                const store = tx.objectStore('media');
+                const results = [];
+                const cursorReq = store.openCursor();
+                cursorReq.onsuccess = function(e) {
+                    const cursor = e.target.result;
+                    if (cursor) {
+                        results.push(cursor.value);
+                        cursor.continue();
+                    } else {
+                        resolve(results);
+                    }
+                };
+                cursorReq.onerror = function(ev) { reject(ev.target.error); };
+                tx.oncomplete = function() { db.close(); };
+                tx.onerror = function(e) { db.close(); reject(e.target.error); };
+            }));
+        }
+
+        function getMedia(id) {
+            return openDB().then(db => new Promise((resolve, reject) => {
+                const tx = db.transaction('media', 'readonly');
+                const store = tx.objectStore('media');
+                const req = store.get(id);
+                req.onsuccess = function(ev) { db.close(); resolve(ev.target.result); };
+                req.onerror = function(ev) { db.close(); reject(ev.target.error); };
+            }));
+        }
+
+        function updateMedia(id, updates) {
+            return openDB().then(db => new Promise((resolve, reject) => {
+                const tx = db.transaction('media', 'readwrite');
+                const store = tx.objectStore('media');
+                const getReq = store.get(id);
+                getReq.onsuccess = function(ev) {
+                    const rec = ev.target.result;
+                    if (!rec) { db.close(); reject(new Error('Not found')); return; }
+                    Object.assign(rec, updates);
+                    const putReq = store.put(rec);
+                    putReq.onsuccess = function() { db.close(); resolve(true); };
+                    putReq.onerror = function(e) { db.close(); reject(e.target.error); };
+                };
+                getReq.onerror = function(e) { db.close(); reject(e.target.error); };
+            }));
+        }
+
+        function deleteMedia(id) {
+            return openDB().then(db => new Promise((resolve, reject) => {
+                const tx = db.transaction('media', 'readwrite');
+                const store = tx.objectStore('media');
+                const req = store.delete(id);
+                req.onsuccess = function() { db.close(); resolve(true); };
+                req.onerror = function(e) { db.close(); reject(e.target.error); };
+            }));
+        }
+
+        // UI logic
+        function loadData() {
+            setupImageUpload();
+            applyGalleryColumns();
+            loadGitHubSettings();
+            
+            const loadFromDB = () => {
+                getAllMedia().then(records => {
+                    records.sort((a,b) => a.createdAt - b.createdAt);
+                    photos = records;
+                    loadPhotos();
+                    loadMemoryList();
+                }).catch(err => console.error('Failed to load media:', err));
+            };
+            
+            // Try to auto-load memories from shared memories.json file (only once)
+            if (!autoLoadDone) {
+                autoLoadDone = true;
+                localStorage.setItem('autoLoadDone', 'true');
+                loadEmbeddedMemories(() => {
+                    autoLoadMemoriesFromServer(() => loadFromDB());
+                });
+            } else {
+                loadFromDB();
+            }
+        }
+
+        // Load embedded memories from the HTML file
+        function loadEmbeddedMemories(onComplete) {
+            if (!defaultMemories || defaultMemories.length === 0) {
+                if (onComplete) onComplete();
+                return;
+            }
+
+            getAllMedia().then(existingRecords => {
+                const existingCreatedAt = new Set(existingRecords.map(r => r.createdAt));
+                let loaded = 0;
+
+                const promises = defaultMemories.map(mem => {
+                    // Skip if already exists
+                    if (existingCreatedAt.has(mem.createdAt)) {
+                        return Promise.resolve();
+                    }
+
+                    if (mem.blobData && mem.blobData.startsWith('data:')) {
+                        return fetch(mem.blobData)
+                            .then(res => res.blob())
+                            .then(blob => addMedia(blob, mem.type, mem.description, mem.createdAt))
+                            .then(() => { loaded++; });
+                    }
+                    return Promise.resolve();
+                });
+
+                return Promise.all(promises).then(() => {
+                    console.log('Loaded ' + loaded + ' embedded memories');
+                    if (onComplete) onComplete();
+                });
+            });
+        }
+
+        function setupImageUpload() {
+            const photoInput = document.getElementById('photoInput');
+            const uploadLabel = document.getElementById('uploadLabel');
+            photoInput.addEventListener('change', function(e) { handleFileSelection(e.target.files[0]); });
+            uploadLabel.addEventListener('dragover', function(e) { e.preventDefault(); e.stopPropagation(); uploadLabel.classList.add('dragover'); });
+            uploadLabel.addEventListener('dragleave', function(e) { e.preventDefault(); e.stopPropagation(); uploadLabel.classList.remove('dragover'); });
+            uploadLabel.addEventListener('drop', function(e) { e.preventDefault(); e.stopPropagation(); uploadLabel.classList.remove('dragover'); const files = e.dataTransfer.files; if (files.length) handleFileSelection(files[0]); });
+        }
+
+        function handleFileSelection(file) {
+            if (!file) return;
+            const isImage = file.type.startsWith('image/');
+            const isVideo = file.type.startsWith('video/');
+            if (!isImage && !isVideo) { alert('Please select a valid image or video file!'); return; }
+            selectedFile = file; selectedMediaType = isVideo ? 'video' : 'photo';
+            if (selectedPreviewURL) URL.revokeObjectURL(selectedPreviewURL);
+            selectedPreviewURL = URL.createObjectURL(file);
+            showImagePreview(selectedPreviewURL, selectedMediaType);
+        }
+
+        function showImagePreview(mediaSrc, type = 'photo') {
+            const previewContainer = document.getElementById('previewContainer');
+            let previewHTML = '';
+            if (type === 'video') previewHTML = `<div class="preview-container"><video src="${mediaSrc}" class="image-preview" controls style="width:100%;border-radius:10px"></video><button type="button" class="remove-image-btn" onclick="removeImagePreview()">✕</button></div>`;
+            else previewHTML = `<div class="preview-container"><img src="${mediaSrc}" class="image-preview"><button type="button" class="remove-image-btn" onclick="removeImagePreview()">✕</button></div>`;
+            previewContainer.innerHTML = previewHTML;
+        }
+
+        function removeImagePreview() { if (selectedPreviewURL) { URL.revokeObjectURL(selectedPreviewURL); selectedPreviewURL = null; } selectedFile = null; selectedMediaType = null; const input = document.getElementById('photoInput'); if (input) input.value = ''; document.getElementById('previewContainer').innerHTML = ''; }
+
+        function addNewMemory() {
+            if (!selectedFile) { showMessage('Please select a photo or video first!', false); return; }
+            if (photos && photos.length >= 8) { showMessage('❌ Maximum 8 memories allowed! Delete some memories to add more.', false); return; }
+            const description = document.getElementById('memoryDesc').value || '';
+            addMedia(selectedFile, selectedMediaType, description).then(id => {
+                showMessage('✅ Memory added successfully!', true);
+                removeImagePreview();
+                document.getElementById('memoryDesc').value = '';
+                // After adding, reload local view
+                loadData();
+                setTimeout(() => { const photosSection = document.getElementById('photos-section'); photosSection.scrollIntoView({ behavior: 'smooth' }); }, 500);
+
+                // If admin enabled auto-publish, try to publish updated memories to GitHub
+                try {
+                    const auto = localStorage.getItem('ghAutoPublish') === 'true';
+                    if (auto) publishMemoriesToGitHub();
+                } catch (e) { console.error('Auto-publish check failed:', e); }
+            }).catch(err => { console.error('Failed to add media:', err); showMessage('Failed to save memory. Storage error.', false); });
+        }
+
+        function resetForm() { document.getElementById('memoryDesc').value = ''; removeImagePreview(); }
+
+        function loadMemoryList() {
+            const list = document.getElementById('memoryList');
+            list.innerHTML = '';
+            if (!photos || photos.length === 0) {
+                list.innerHTML = '<p style="text-align:center;color:#999">No memories yet. Add one to get started!</p>';
+                return;
+            }
+
+            // Add bulk controls header
+            const controls = document.createElement('div');
+            controls.style.display = 'flex';
+            controls.style.justifyContent = 'space-between';
+            controls.style.alignItems = 'center';
+            controls.style.marginBottom = '10px';
+
+            const left = document.createElement('div');
+            left.innerHTML = `<label style="display:flex;align-items:center;gap:8px"><input type="checkbox" id="selectAllMemories"> <span style="font-size:14px;color:#555">Select all</span></label>`;
+            controls.appendChild(left);
+
+            const right = document.createElement('div');
+            const delBtn = document.createElement('button');
+            delBtn.className = 'delete-btn';
+            delBtn.textContent = 'Delete selected';
+            delBtn.style.marginLeft = '8px';
+            delBtn.addEventListener('click', deleteSelectedMemories);
+            right.appendChild(delBtn);
+            controls.appendChild(right);
+
+            list.appendChild(controls);
+
+            photos.forEach(rec => {
+                const item = document.createElement('div');
+                item.className = 'memory-item';
+                const icon = rec.type === 'video' ? '📹' : '📸';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'memory-select-checkbox';
+                checkbox.dataset.id = rec.id;
+                checkbox.style.marginRight = '12px';
+
+                const content = document.createElement('div');
+                content.className = 'memory-item-content';
+                content.innerHTML = `<div style="display:flex;align-items:center"><span style="font-size:24px;margin-right:10px">${icon}</span><span class="memory-item-text">${rec.description || '(No description)'}</span></div>`;
+
+                const buttons = document.createElement('div');
+                buttons.className = 'memory-item-buttons';
+                
+                const editBtn = document.createElement('button');
+                editBtn.className = 'edit-btn';
+                editBtn.textContent = 'Edit';
+                editBtn.addEventListener('click', () => editMemory(rec.id));
+                
+                const replaceBtn = document.createElement('button');
+                replaceBtn.className = 'btn-secondary';
+                replaceBtn.textContent = 'Replace';
+                replaceBtn.addEventListener('click', () => replaceMemoryPrompt(rec.id));
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.addEventListener('click', () => deleteMemory(rec.id));
+                
+                buttons.appendChild(editBtn);
+                buttons.appendChild(replaceBtn);
+                buttons.appendChild(deleteBtn);
+
+                item.appendChild(checkbox);
+                item.appendChild(content);
+                item.appendChild(buttons);
+                list.appendChild(item);
+            });
+
+            // Hook up select all checkbox
+            const selectAll = document.getElementById('selectAllMemories');
+            if (selectAll) {
+                selectAll.checked = false;
+                selectAll.addEventListener('change', function() {
+                    const boxes = document.querySelectorAll('.memory-select-checkbox');
+                    boxes.forEach(b => b.checked = selectAll.checked);
+                });
+            }
+        }
+
+        function editMemory(id) { const rec = photos.find(p => p.id === id); if (!rec) return; const newDesc = prompt('Enter new description:', rec.description || ''); if (newDesc === null) return; updateMedia(id, { description: newDesc }).then(() => { showMessage('✅ Memory updated successfully!', true); loadData(); }).catch(err => { console.error(err); showMessage('Failed to update description.', false); }); }
+
+        function deleteMemory(id) { if (!confirm('Are you sure you want to delete this memory?')) return; deleteMedia(id).then(() => { showMessage('🗑️ Memory deleted successfully!', true); loadData(); }).catch(err => { console.error(err); showMessage('Failed to delete memory.', false); }); }
+
+        // Delete multiple selected memories
+        function deleteSelectedMemories() {
+            const boxes = Array.from(document.querySelectorAll('.memory-select-checkbox')).filter(b => b.checked);
+            if (boxes.length === 0) {
+                showMessage('Please select at least one memory to delete.', false);
+                return;
+            }
+            if (!confirm(`Are you sure you want to delete ${boxes.length} selected memories?`)) return;
+            const ids = boxes.map(b => Number(b.dataset.id));
+            const promises = ids.map(id => deleteMedia(id));
+            Promise.all(promises).then(() => { showMessage('🗑️ Selected memories deleted.', true); loadData(); }).catch(err => { console.error('Bulk delete failed:', err); showMessage('Failed to delete selected memories.', false); });
+        }
+
+        function showMessage(msg, isSuccess) { const msgBox = document.getElementById('successMsg'); msgBox.textContent = msg; msgBox.style.borderLeftColor = isSuccess ? '#28a745' : '#dc3545'; msgBox.style.backgroundColor = isSuccess ? '#d4edda' : '#f8d7da'; msgBox.style.color = isSuccess ? '#155724' : '#721c24'; msgBox.classList.add('show'); setTimeout(() => msgBox.classList.remove('show'), 3000); }
+
+        function startCelebration() { const messageSection = document.getElementById('message-section'); const messageContainer = document.getElementById('messageContainer'); messageSection.scrollIntoView({ behavior: 'smooth' }); setTimeout(() => { if (messageContainer) messageContainer.style.display = 'block'; typeMessage(); setTimeout(loadPhotos, 900); }, 600); }
+
+        // Play background music from a given time safely (handles play promise rejections)
+        function playMusicFrom(seconds) {
+            const audio = document.getElementById('bgMusic');
+            if (!audio) return;
+            try {
+                // Some browsers throw if currentTime is set before metadata loaded
+                audio.currentTime = seconds;
+            } catch (e) {
+                // Wait for metadata to load then set currentTime
+                audio.addEventListener('loadedmetadata', function() { try { audio.currentTime = seconds; } catch (e2) { console.warn('Failed to set currentTime after metadata:', e2); } }, { once: true });
+            }
+            audio.play().catch(err => {
+                console.log('Playback prevented or failed:', err);
+            });
+        }
+
+        function typeMessage() { const paras = Array.from(document.querySelectorAll('#message-section .message-container p')); paras.forEach(p => { p.dataset.full = p.textContent.trim(); p.innerHTML = ''; p.style.opacity = 0; }); function typePara(i) { if (i >= paras.length) return; const p = paras[i]; const full = p.dataset.full || ''; p.style.opacity = 1; const caret = document.createElement('span'); caret.className = 'typing-caret'; p.appendChild(caret); let pos = 0; function step() { if (pos < full.length) { const ch = full.charAt(pos); if (ch === '\n') p.insertBefore(document.createElement('br'), caret); else p.insertBefore(document.createTextNode(ch), caret); pos++; const delay = 25 + Math.random() * 50; setTimeout(step, delay); } else { caret.remove(); setTimeout(() => typePara(i + 1), 400); } } step(); } typePara(0); }
+
+        function scrollToMemories() { const photosSection = document.getElementById('photos-section'); if (photosSection) photosSection.scrollIntoView({ behavior: 'smooth' }); }
+
+        function openGreetingModal() { document.getElementById('greetingModal').classList.add('active'); }
+        function closeGreetingModal() { document.getElementById('greetingModal').classList.remove('active'); }
+        function proceedToMemories() { closeGreetingModal(); startCelebration(); }
+
+        function loadPhotos() { const gallery = document.getElementById('gallery'); gallery.innerHTML = ''; if (!photos || photos.length === 0) { gallery.innerHTML = '<p style="text-align:center;width:100%;color:#999;">No memories added yet.</p>'; return; } photos.forEach((rec, index) => { const photoCard = document.createElement('div'); photoCard.className = 'photo-card'; photoCard.style.animationDelay = `${index * 0.2}s`; const mediaType = rec.type || 'photo'; let src = ''; if (rec.blob instanceof Blob) src = URL.createObjectURL(rec.blob); else if (typeof rec.blob === 'string') src = rec.blob; if (mediaType === 'video') { photoCard.style.position = 'relative'; photoCard.innerHTML = `<video src="${src}" style="width:100%;height:100%;object-fit:cover;"></video><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:40px;background:rgba(0,0,0,0.5);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;pointer-events:none;">▶</div>`; } else { photoCard.innerHTML = `<img src="${src}" alt="Memory">`; } photoCard.onclick = () => showPhotoModal(rec.id); gallery.appendChild(photoCard); }); }
+
+        function showPhotoModal(id) { getMedia(id).then(rec => { if (!rec) return; const modal = document.getElementById('photoModal'); const content = modal.querySelector('.photo-modal-content'); const desc = document.getElementById('photoModalDesc'); const old = content.querySelector('img, video'); if (old) old.remove(); if (rec.type === 'video') { const v = document.createElement('video'); v.className = 'photo-modal-image'; v.controls = true; v.src = URL.createObjectURL(rec.blob); v.style.maxWidth = '100%'; v.style.maxHeight = '75vh'; content.insertBefore(v, desc); } else { const i = document.createElement('img'); i.className = 'photo-modal-image'; i.src = URL.createObjectURL(rec.blob); i.alt = 'Memory'; content.insertBefore(i, desc); } desc.textContent = rec.description || '💕 Beautiful Memory!'; modal.classList.add('active'); }).catch(err => console.error(err)); }
+
+        function closePhotoModal() { document.getElementById('photoModal').classList.remove('active'); }
+
+        document.addEventListener('click', function(event) { const gm = document.getElementById('greetingModal'); if (event.target === gm) closeGreetingModal(); const pm = document.getElementById('photoModal'); if (event.target === pm) closePhotoModal(); });
+        window.onclick = function(event) { const am = document.getElementById('adminModal'); if (event.target === am) closeAdminPanel(); };
+
+        function applyGalleryColumns() { const saved = localStorage.getItem('galleryCols'); const cols = saved ? parseInt(saved, 10) : null; if (cols && cols > 0) { document.documentElement.style.setProperty('--gallery-cols', cols); const input = document.getElementById('galleryCols'); if (input) input.value = cols; } }
+        function setGalleryColumns() { const input = document.getElementById('galleryCols'); if (!input) return; let v = parseInt(input.value, 10) || 3; if (v < 1) v = 1; if (v > 6) v = 6; document.documentElement.style.setProperty('--gallery-cols', v); localStorage.setItem('galleryCols', String(v)); showMessage('Gallery columns updated', true); }
+
+        function replaceMemoryPrompt(id) { replaceId = id; const rep = document.getElementById('replaceInput'); if (rep) rep.click(); }
+
+        function openAdminPanel() { const pwd = prompt('Enter admin password:'); if (pwd === '2702') { document.getElementById('adminModal').classList.add('active'); loadMemoryList(); } else { showMessage('Incorrect admin password.', false); } }
+        function closeAdminPanel() { document.getElementById('adminModal').classList.remove('active'); }
+        function switchTab(tab) { document.querySelectorAll('.admin-tab-content').forEach(t => t.classList.remove('active')); document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active')); document.getElementById('tab-' + tab).classList.add('active'); if (event && event.target) event.target.classList.add('active'); if (tab === 'edit') loadMemoryList(); }
+
+        window.onload = function() { loadData(); const audio = document.getElementById('bgMusic'); audio.currentTime = 15; audio.play().catch(err => console.log('Autoplay blocked:', err)); applyGalleryColumns(); const replaceInput = document.getElementById('replaceInput'); if (replaceInput) { replaceInput.addEventListener('change', function(e) { const f = e.target.files && e.target.files[0]; if (!f || replaceId === null) return; updateMedia(replaceId, { blob: f, type: f.type.startsWith('video/') ? 'video' : 'photo' }).then(() => { showMessage('Memory replaced', true); replaceId = null; replaceInput.value = ''; loadData(); }).catch(err => { console.error(err); showMessage('Failed to replace memory.', false); replaceId = null; replaceInput.value = ''; }); }); } };
+
+        function toggleAudio() { const audio = document.getElementById('bgMusic'); const button = document.getElementById('audioToggle'); if (audio.muted) { audio.muted = false; audio.currentTime = 15; audio.play().catch(err => console.log('Playback error:', err)); button.innerHTML = '<span class="music-icon">🎵</span><span>Mute Music</span>'; } else { audio.muted = true; audio.pause(); button.innerHTML = '<span class="music-icon">🎵</span><span>Unmute Music</span>'; } }
+
+        // Server sync functions
+        function exportMemoriesToJSON() {
+            getAllMedia().then(records => {
+                const toExport = records.map(rec => ({
+                    type: rec.type,
+                    description: rec.description,
+                    createdAt: rec.createdAt,
+                    blobData: null // will be handled separately
+                }));
+                
+                // Create a single object with metadata and blobs
+                const exportObj = { memories: toExport };
+                
+                // Convert records to base64 and attach
+                const promises = records.map((rec, idx) => {
+                    return new Promise((resolve) => {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            toExport[idx].blobData = e.target.result; // base64 data URL
+                            resolve();
+                        };
+                        reader.readAsDataURL(rec.blob);
+                    });
+                });
+                
+                Promise.all(promises).then(() => {
+                    const jsonStr = JSON.stringify(exportObj, null, 2);
+                    const blob = new Blob([jsonStr], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'memories.json';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showMessage('✅ Memories exported! Upload memories.json to your server folder.', true);
+                });
+            }).catch(err => {
+                console.error('Export failed:', err);
+                showMessage('❌ Export failed.', false);
+            });
+        }
+
+        // Save GitHub settings to localStorage
+        function saveGitHubSettings() {
+            const owner = document.getElementById('ghOwner').value.trim();
+            const repo = document.getElementById('ghRepo').value.trim();
+            const token = document.getElementById('ghToken').value.trim();
+            const auto = document.getElementById('ghAutoPublish').checked;
+            if (!owner || !repo) { showMessage('Please enter GitHub owner and repo.', false); return; }
+            localStorage.setItem('ghOwner', owner);
+            localStorage.setItem('ghRepo', repo);
+            if (token) localStorage.setItem('ghToken', token);
+            localStorage.setItem('ghAutoPublish', auto ? 'true' : 'false');
+            showMessage('✅ GitHub settings saved (token stored locally).', true);
+        }
+
+        function loadGitHubSettings() {
+            const owner = localStorage.getItem('ghOwner') || '';
+            const repo = localStorage.getItem('ghRepo') || '';
+            const token = localStorage.getItem('ghToken') || '';
+            const auto = localStorage.getItem('ghAutoPublish') === 'true';
+            if (document.getElementById('ghOwner')) document.getElementById('ghOwner').value = owner;
+            if (document.getElementById('ghRepo')) document.getElementById('ghRepo').value = repo;
+            if (document.getElementById('ghToken')) document.getElementById('ghToken').value = token;
+            if (document.getElementById('ghAutoPublish')) document.getElementById('ghAutoPublish').checked = auto;
+        }
+
+        // Helper to build JSON export object (with base64 blobData)
+        function buildExportObject() {
+            return getAllMedia().then(records => {
+                const toExport = records.map(rec => ({ type: rec.type, description: rec.description, createdAt: rec.createdAt, blobData: null }));
+                const promises = records.map((rec, idx) => new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onload = function(e) { toExport[idx].blobData = e.target.result; resolve(); };
+                    if (rec.blob instanceof Blob) reader.readAsDataURL(rec.blob);
+                    else { toExport[idx].blobData = rec.blob; resolve(); }
+                }));
+                return Promise.all(promises).then(() => ({ memories: toExport }));
+            });
+        }
+
+        // Publish memories.json to GitHub repo using REST API (requires token)
+        function publishMemoriesToGitHub() {
+            const owner = (document.getElementById('ghOwner') && document.getElementById('ghOwner').value.trim()) || localStorage.getItem('ghOwner');
+            const repo = (document.getElementById('ghRepo') && document.getElementById('ghRepo').value.trim()) || localStorage.getItem('ghRepo');
+            const token = (document.getElementById('ghToken') && document.getElementById('ghToken').value.trim()) || localStorage.getItem('ghToken');
+            if (!owner || !repo || !token) { showMessage('Enter GitHub owner/repo/token in Sync tab.', false); return; }
+
+            showMessage('⏳ Publishing memories to GitHub...', true);
+            buildExportObject().then(exportObj => {
+                const contentStr = JSON.stringify(exportObj, null, 2);
+                const contentB64 = btoa(unescape(encodeURIComponent(contentStr)));
+                // Get current file SHA (if exists)
+                const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/memories.json`;
+                fetch(apiUrl, { headers: { Authorization: 'token ' + token, Accept: 'application/vnd.github.v3+json' } })
+                    .then(res => {
+                        if (res.ok) return res.json();
+                        if (res.status === 404) return null;
+                        return res.text().then(txt => { throw new Error(`GitHub GET error ${res.status}: ${txt}`); });
+                    })
+                    .then(data => {
+                        const sha = data && data.sha ? data.sha : null;
+                        const body = { message: 'Update memories.json via admin', content: contentB64 };
+                        if (sha) body.sha = sha;
+                        return fetch(apiUrl, { method: 'PUT', headers: { Authorization: 'token ' + token, Accept: 'application/vnd.github.v3+json' }, body: JSON.stringify(body) });
+                    })
+                    .then(res => {
+                        if (!res.ok) return res.text().then(txt => { throw new Error(`GitHub PUT error ${res.status}: ${txt}`); });
+                        return res.json();
+                    })
+                    .then(result => {
+                        const debugEl = document.getElementById('ghDebug');
+                        if (result && result.content) {
+                            showMessage('✅ Published memories.json to GitHub!', true);
+                            if (debugEl) debugEl.textContent = JSON.stringify(result, null, 2);
+                        } else {
+                            console.error('Publish failed (no content):', result);
+                            if (debugEl) debugEl.textContent = JSON.stringify(result, null, 2);
+                            showMessage('❌ Failed to publish to GitHub. See debug output for details.', false);
+                        }
+                    }).catch(err => {
+                        console.error('Publish error:', err);
+                        const debugEl = document.getElementById('ghDebug');
+                        if (debugEl) debugEl.textContent = (err && err.message) ? err.message : String(err);
+                        // Provide a more helpful message to the admin
+                        let help = '';
+                        if (err.message && err.message.includes('404')) help = 'Repo or path not found (check owner/repo).';
+                        else if (err.message && err.message.includes('401')) help = 'Unauthorized — check token permissions.';
+                        else if (err.message && err.message.includes('rate limit')) help = 'Rate limited by GitHub. Try again later.';
+                        showMessage('❌ Publish failed: ' + (help || err.message || 'See debug output'), false);
+                    });
+            }).catch(err => { console.error('Build export failed:', err); showMessage('❌ Failed to build export.', false); });
+        }
+
+        // Replace local IndexedDB `media` store with the provided memories array.
+        // Each memory should have { type, description, createdAt, blobData }
+        function replaceLocalWithMemories(memories, limit = 8) {
+            if (!Array.isArray(memories)) return Promise.reject(new Error('Invalid memories array'));
+            // Trim to limit
+            const toImport = memories.slice(0, limit);
+            return openDB().then(db => new Promise((resolve, reject) => {
+                const tx = db.transaction('media', 'readwrite');
+                const store = tx.objectStore('media');
+                const clearReq = store.clear();
+                clearReq.onsuccess = function() {
+                    // After clear, import sequentially
+                    const importPromises = toImport.map(mem => {
+                        return new Promise((res) => {
+                            try {
+                                if (mem.blobData && mem.blobData.startsWith('data:')) {
+                                    const arr = mem.blobData.split(',');
+                                    const mimeMatch = arr[0].match(/:(.*?);/);
+                                    const mime = mimeMatch ? mimeMatch[1] : 'image/jpeg';
+                                    const bstr = atob(arr[1]);
+                                    const n = bstr.length;
+                                    const u8arr = new Uint8Array(n);
+                                    for (let i = 0; i < n; i++) u8arr[i] = bstr.charCodeAt(i);
+                                    const blob = new Blob([u8arr], { type: mime });
+                                    // Use addMedia to maintain consistent DB handling
+                                    addMedia(blob, mem.type || 'photo', mem.description || '', mem.createdAt).then(() => res()).catch(() => res());
+                                } else {
+                                    // No blob data available, skip
+                                    res();
+                                }
+                            } catch (e) { console.error('Import error', e); res(); }
+                        });
+                    });
+                    Promise.all(importPromises).then(() => { db.close(); resolve(true); }).catch(e => { db.close(); reject(e); });
+                };
+                clearReq.onerror = function(e) { db.close(); reject(e.target.error); };
+            }));
+        }
+
+        // Compute SHA-256 hex digest for a Blob
+        function computeHashFromBlob(blob) {
+            return blob.arrayBuffer().then(buf => crypto.subtle.digest('SHA-256', buf)).then(hashBuffer => {
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            });
+        }
+
+        // Compute SHA-256 hex digest for a data URL string
+        function computeHashFromDataURL(dataUrl) {
+            try {
+                const parts = dataUrl.split(',');
+                const b64 = parts[1] || '';
+                const binary = atob(b64);
+                const len = binary.length;
+                const bytes = new Uint8Array(len);
+                for (let i = 0; i < len; i++) bytes[i] = binary.charCodeAt(i);
+                return crypto.subtle.digest('SHA-256', bytes).then(hashBuffer => {
+                    const hashArray = Array.from(new Uint8Array(hashBuffer));
+                    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                });
+            } catch (e) {
+                return Promise.resolve(null);
+            }
+        }
+
+        // Remove duplicate memories in IndexedDB based on blob hash
+        function removeDuplicateMemories() {
+            showMessage('⏳ Scanning for duplicates...', true);
+            getAllMedia().then(records => {
+                const hashMap = new Map();
+                const toDelete = [];
+                const promises = records.map(rec => {
+                    if (rec.hash) return Promise.resolve({ id: rec.id, hash: rec.hash });
+                    // compute hash from blob
+                    if (rec.blob instanceof Blob) return computeHashFromBlob(rec.blob).then(h => ({ id: rec.id, hash: h }));
+                    return Promise.resolve({ id: rec.id, hash: null });
+                });
+                Promise.all(promises).then(list => {
+                    list.forEach(item => {
+                        const h = item.hash || 'nohash_' + item.id;
+                        if (hashMap.has(h)) {
+                            toDelete.push(item.id);
+                        } else {
+                            hashMap.set(h, item.id);
+                        }
+                    });
+                    if (toDelete.length === 0) {
+                        showMessage('No duplicate memories found.', true);
+                        return;
+                    }
+                    const delPromises = toDelete.map(id => deleteMedia(id));
+                    Promise.all(delPromises).then(() => { showMessage(`🧹 Removed ${toDelete.length} duplicate memories.`, true); loadData(); }).catch(err => { console.error('Failed deleting duplicates:', err); showMessage('Failed to remove duplicates.', false); });
+                });
+            }).catch(err => { console.error('Failed scanning media:', err); showMessage('Failed to scan for duplicates.', false); });
+        }
+
+        // Clear all memories from IndexedDB
+        function clearAllMemories() {
+            if (!confirm('Are you sure? This will permanently delete ALL memories from this browser.')) return;
+            openDB().then(db => new Promise((resolve, reject) => {
+                const tx = db.transaction('media', 'readwrite');
+                const store = tx.objectStore('media');
+                const req = store.clear();
+                req.onsuccess = function() { db.close(); resolve(true); };
+                req.onerror = function(e) { db.close(); reject(e.target.error); };
+            })).then(() => { showMessage('🗑️ All memories cleared.', true); loadData(); }).catch(err => { console.error('Clear failed:', err); showMessage('Failed to clear memories.', false); });
+        }
+
+        // --- Test helpers (temporary) ---
+        // Create two identical small blobs, add both, then run dedupe
+        function testDedupeFlow() {
+            showMessage('⏳ Creating duplicate test memories...', true);
+            // tiny 1x1 png
+            const dataUrl = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
+            fetch(dataUrl).then(r => r.blob()).then(blob => {
+                const created = Date.now();
+                addMedia(blob, 'photo', 'dupe-test', created).then(() => {
+                    // add second duplicate
+                    addMedia(blob, 'photo', 'dupe-test', created + 1).then(() => {
+                        showMessage('✅ Duplicate test memories added — running dedupe...', true);
+                        // run dedupe
+                        setTimeout(() => removeDuplicateMemories(), 500);
+                    });
+                });
+            }).catch(err => { console.error('Test add failed', err); showMessage('Test failed to create duplicates.', false); });
+        }
+
+        // Create a couple of test records then clear to confirm clearAllMemories works
+        function testClearFlow() {
+            showMessage('⏳ Creating test memories for clear...', true);
+            const dataUrl = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=';
+            fetch(dataUrl).then(r => r.blob()).then(blob => {
+                Promise.all([addMedia(blob,'photo','clear-test1'), addMedia(blob,'photo','clear-test2')]).then(() => {
+                    showMessage('✅ Test memories added — running clear...', true);
+                    setTimeout(() => clearAllMemories(), 500);
+                });
+            }).catch(err => { console.error('Test clear failed', err); showMessage('Test failed to create memories for clear.', false); });
+        }
+
+        function loadMemoriesFromServer() {
+            const serverURL = document.getElementById('serverURL').value.trim() || localStorage.getItem('serverURL');
+            if (!serverURL) { showMessage('Please enter a server URL.', false); return; }
+            
+            showMessage('⏳ Downloading memories from server...', true);
+            fetch(serverURL.endsWith('/') ? serverURL + 'memories.json' : serverURL + '/memories.json')
+                .then(res => {
+                    if (!res.ok) throw new Error('Failed to fetch: ' + res.status);
+                    return res.json();
+                })
+                .then(data => {
+                    const memories = data.memories || data;
+                    
+                    // Get existing memories to check for duplicates and limit
+                    return getAllMedia().then(existingRecords => {
+                        const existingCreatedAt = new Set(existingRecords.map(r => r.createdAt));
+                        
+                        let loaded = 0;
+                        let attemptedToAdd = 0;
+                        const promises = memories.map(mem => {
+                            // Skip if memory with same createdAt already exists (prevents duplicates)
+                            if (existingCreatedAt.has(mem.createdAt)) {
+                                return Promise.resolve();
+                            }
+                            
+                            // Check if adding would exceed 8 memories
+                            if (existingRecords.length + loaded >= 8) {
+                                attemptedToAdd++;
+                                return Promise.resolve();
+                            }
+                            
+                                if (mem.blobData && mem.blobData.startsWith('data:')) {
+                                return fetch(mem.blobData).then(res => res.blob()).then(blob => addMedia(blob, mem.type, mem.description, mem.createdAt)).then(() => { loaded++; });
+                            }
+                            return Promise.resolve();
+                        });
+                        return Promise.all(promises).then(() => {
+                            let msg = `✅ Loaded ${loaded} new memories from server!`;
+                            if (attemptedToAdd > 0) msg += ` (Skipped ${attemptedToAdd} due to 8-memory limit)`;
+                            showMessage(msg, true);
+                            if (serverURL) localStorage.setItem('serverURL', serverURL);
+                            loadData();
+                        });
+                    });
+                })
+                .catch(err => {
+                    console.error('Download failed:', err);
+                    showMessage('❌ Failed to download. Check server URL or memories.json path.', false);
+                });
+        }
+
+        function autoLoadMemoriesFromServer(onComplete) {
+            // Add timestamp to bypass browser cache
+            const timestamp = new Date().getTime();
+            const cacheBuster = `?t=${timestamp}`;
+            
+            // For GitHub Pages: try multiple path variations
+            const tryPaths = [
+                `memories.json${cacheBuster}`,  // Main location
+                `./memories.json${cacheBuster}`,  // Explicit current dir
+            ];
+
+            const attemptLoad = (paths, index) => {
+                if (index >= paths.length) {
+                    console.log('❌ memories.json not found. Using local storage only.');
+                    if (onComplete) onComplete();
+                    return;
+                }
+
+                const url = paths[index];
+                console.log(`🔍 Attempting to load: ${url}`);
+                
+                fetch(url, { cache: 'no-store' })
+                    .then(res => {
+                        console.log(`Response status for ${url}: ${res.status}`);
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    })
+                    .then(data => {
+                        const memories = Array.isArray(data) ? data : (data.memories || []);
+                        
+                        if (!memories || memories.length === 0) {
+                            console.log('⚠️ memories.json found but empty');
+                            if (onComplete) onComplete();
+                            return;
+                        }
+
+                        console.log(`✅ Found memories.json with ${memories.length} items - replacing local set`);
+
+                        // Replace the local DB with the published memories so viewers see exactly the admin set.
+                        // Keep up to 8 items (enforced by replaceLocalWithMemories)
+                        return replaceLocalWithMemories(memories.slice(0, 8)).then(() => {
+                            showMessage(`✅ Loaded ${Math.min(memories.length,8)} shared memories (replaced local)`, true);
+                            if (onComplete) onComplete();
+                        }).catch(err => {
+                            console.error('Failed to replace local memories:', err);
+                            if (onComplete) onComplete();
+                        });
+                    })
+                    .catch(err => {
+                        console.error(`❌ Failed to load ${url}:`, err);
+                        attemptLoad(paths, index + 1);
+                    });
+            };
+
+            attemptLoad(tryPaths, 0);
+        }
+    </script>
+
+</body>
+</html>
