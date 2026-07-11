@@ -2092,8 +2092,8 @@ Goodbye… for now. 🌙</p>
 
                         // Replace the local DB with the published memories so viewers see exactly the admin set.
                         // Keep up to 8 items (enforced by replaceLocalWithMemories)
-                        return replaceLocalWithMemories(memories.slice(0, 8)).then(() => {
-                            showMessage(`✅ Loaded ${Math.min(memories.length,8)} shared memories (replaced local)`, true);
+                        return replaceLocalWithMemories(memories.slice(0, 11)).then(() => {
+                            showMessage(`✅ Loaded ${Math.min(memories.length,11)} shared memories (replaced local)`, true);
                             if (onComplete) onComplete();
                         }).catch(err => {
                             console.error('Failed to replace local memories:', err);
